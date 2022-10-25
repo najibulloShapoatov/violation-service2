@@ -1,0 +1,43 @@
+
+APPLICATION_NAME = Service-Web
+
+;levels log "INFO"  "WARN"   "ERROR"
+LOG_LEVEL="INFO"
+
+#Http api configuration
+[HTTP_SERVER]
+PORT = 8776
+
+
+DB_DRIVER="pgx"
+
+;Database Configuration
+[DB]
+Host = "127.0.0.1" # host postgres
+Port = "5432"      # port postgres
+Dbname = "servicedb"
+SslMode = "disable"
+User = "--"
+Pass = "--"
+;300000 in millisecond 5 minute
+ConnMaxLifetime = 300000
+ #max opened connection to db
+MaxOpenConns = 16
+#max idle connection to database
+MaxIdleConns = 8
+
+
+;Database Configuration safecitydb
+[DBS]
+Host = "127.0.0.1" # host postgres
+Port = "5432"      # port postgres
+Dbname = "safecitydb"
+SslMode = "disable"
+User = "--"
+Pass = "--"
+;300000 in millisecond 5 minute
+ConnMaxLifetime = 300000
+ #max opened connection to db
+MaxOpenConns = 16
+#max idle connection to database
+MaxIdleConns = 8

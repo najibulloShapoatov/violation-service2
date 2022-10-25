@@ -1,0 +1,54 @@
+
+APPLICATION_NAME = Service-Worker
+
+;levels log "INFO"  "WARN"   "ERROR"
+LOG_LEVEL="INFO"
+
+TIME_DAILY_ONE="12:00"
+TIME_DAILY_TWO="18:00"
+
+MONTHLY_NTH_DAY="10"
+MONTHLY_NTH_TIME="12:30"
+
+END_SUBSCRIPTION_TIME="18:15"
+DAYS_AGO=1
+
+
+DB_DRIVER="pgx" # "mysql"||"pgx"
+
+;Database Configuration
+[DB]
+Host = "127.0.0.1" # host postgres
+Port = "5432"      # port postgres
+Dbname = "servicedb"
+SslMode = "disable"
+User = "--"
+Pass = "--"
+;300000 in millisecond 5 minute
+ConnMaxLifetime = 300000
+ #max opened connection to db
+MaxOpenConns = 16
+#max idle connection to database
+MaxIdleConns = 8
+
+;Database Configuration safecitydb
+[DBS]
+Host = "127.0.0.1" # host postgres
+Port = "5432"      # port postgres
+Dbname = "safecitydb"
+SslMode = "disable"
+User = "--"
+Pass = "--"
+;300000 in millisecond 5 minute
+ConnMaxLifetime = 300000
+#max opened connection to db
+MaxOpenConns = 16
+#max idle connection to database
+MaxIdleConns = 8
+
+[KANNEL]
+LINK = "http://89.253.231.12:13033/cgi-bin/sendsms"
+USERNAME = "--"
+PASSWORD = "--"
+SMSC = "--"
+FROM = "--"

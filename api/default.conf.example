@@ -1,0 +1,50 @@
+
+APPLICATION_NAME = Service-API
+
+;levels log "INFO"  "WARN"   "ERROR"
+LOG_LEVEL="INFO"
+
+#Http api configuration
+[HTTP_SERVER]
+PORT = 8775
+
+
+DB_DRIVER="postgres" # "mysql"||"pgx"
+
+;Database Configuration
+[DB]
+Host = "127.0.0.1" # host postgres
+Port = "5432"      # port postgres
+Dbname = "servicedb"
+SslMode = "disable"
+User = "--"
+Pass = "--"
+;300000 in millisecond 5 minute
+ConnMaxLifetime = 300000
+ #max opened connection to db
+MaxOpenConns = 16
+#max idle connection to database
+MaxIdleConns = 8
+
+
+;Database Configuration safecitydb
+[DBS]
+Host = "127.0.0.1" # host postgres
+Port = "5432"      # port postgres
+Dbname = "safecitydb"
+SslMode = "disable"
+User = "--"
+Pass = "--"
+;300000 in millisecond 5 minute
+ConnMaxLifetime = 300000
+ #max opened connection to db
+MaxOpenConns = 16
+#max idle connection to database
+MaxIdleConns = 8
+
+[KANNEL]
+LINK = "http://127.0.0.1:13036/cgi-bin/sendsms"
+USERNAME = "--"
+PASSWORD = "--"
+SMSC = "--"
+FROM = "--"
